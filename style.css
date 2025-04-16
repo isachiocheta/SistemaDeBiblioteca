@@ -1,0 +1,228 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #f4f4f4;
+    background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    padding-bottom: 60px;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 30, 63, 0.85); 
+    z-index: -1;
+  }
+  
+  header {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+    color: #ffffff;
+     font-family: 'Playfair Display', serif;
+  }
+  
+  section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 790px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 26px;
+    color: #0b1e3f;
+  }
+  
+  h3#titleAllBooks {
+    margin-bottom: 30px;
+  }
+  
+  form#register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  form#register input+label {
+    margin-top: 10px;
+  }
+  
+  label {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  input, textarea {
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #fdfdfd;
+    width: 300px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+    outline: none;
+  }
+  
+  input:focus, textarea:focus {
+    border: 1px solid #1a73e8;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  button {
+    margin-top: 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: #1a73e8;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #1666c1;
+  }
+  
+  div#listOfBooksSearch {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  div#listOfAllBooks p#emptyBookList {
+    text-align: center;
+    grid-column: 1 / 5;
+    color: #ccc;
+  }
+  
+  div#foundBooks, div#listOfAllBooks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin: 10px;
+  }
+  
+  div#foundBooks div, div#listOfAllBooks div {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    font-size: 15px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-family: 'Lora', serif;
+  }
+  
+  p#bookTitle {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+    color: #1a1a1a;
+  }
+  
+  div#foundBooks img, div#listOfAllBooks img {
+    height: 130px;
+    width: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin: 10px auto;
+  }
+  
+  button#btnSearch::before {
+    content: '\f002';
+    font-family: FontAwesome;
+    font-size: 15px;
+    margin-right: 5px;
+  }
+  
+  button#btnSinopsys {
+    background-color: #045e9b;
+  }
+  
+  button#btnSinopsys:hover {
+    background-color: #0577c4;
+  }
+  
+  button#btnSinopsys::before {
+    content: '\f02d';
+    font-family: FontAwesome;
+    font-size: 16px;
+    margin-right: 6px;
+  }
+  
+  button#btnRemove {
+    background-color: #b00020;
+  }
+  
+  button#btnRemove:hover {
+    background-color: #d32f2f;
+  }
+  
+  button#btnRemove::before {
+    content: '\f1f8';
+    font-family: FontAwesome;
+    font-size: 16px;
+    margin-right: 6px;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 30px;
+    border: none;
+    width: 60%;
+    border-radius: 12px;
+    font-family: 'Lora', serif;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  #btnCloseModal {
+    color: #999;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  #btnCloseModal:hover, #btnCloseModal:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+  }
